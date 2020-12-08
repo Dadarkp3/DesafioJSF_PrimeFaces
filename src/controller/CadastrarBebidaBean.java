@@ -7,6 +7,8 @@ import javax.faces.context.FacesContext;
 
 import model.Bebida;
 
+import service.BebidaService;
+
 @ManagedBean(name = "cadastrarBebida")
 @SessionScoped
 public class CadastrarBebidaBean {
@@ -24,15 +26,22 @@ public class CadastrarBebidaBean {
 	}
 
 	public void salvar() {
-		
-		
+		BebidaService.salvarBebida(bebida);
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Salvo com Sucesso!", null);
+		FacesContext.getCurrentInstance().addMessage(null, message);
+		this.bebida = bebida;
 	}
 
 	public Bebida getBebida() {
-		return null;
+		return this.bebida;
 	}
 
 	public void setBebida(Bebida bebida) {
-		
+		this.bebida = bebida;
+	}
+
+
+	public void limparDados() {
+		this.bebida = new Bebida();
 	}
 }

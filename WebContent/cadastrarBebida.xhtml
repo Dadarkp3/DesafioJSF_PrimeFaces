@@ -7,7 +7,7 @@
 
 <f:metadata>
 
-	<f:viewAction action="" />
+	<f:viewAction action="#{cadastrarBebida.prepararCadastro}" />
 	
 </f:metadata>
 
@@ -18,11 +18,38 @@
 
 <h:body>
 
-	 <ui:include src="/menu.xhtml" />
-   
-    
-    <h:form id="form">
-    
+	 <ui:include src="/menu.xhtml"   />
+
+
+	<h:form>
+		<p:panel id="panel"  border="0">
+			<p:messages id="messages" />
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="descricao" value="Descrição da bebida " />
+				<p:inputText id="descricao" value="#{cadastrarBebida.bebida.descricao}" required="true" />
+
+				<p:outputLabel for="marca" value="Marca " />
+				<p:inputText id="marca" value="#{cadastrarBebida.bebida.marca}" required="true" />
+
+				<p:outputLabel for="valorUnitario" value="Valor unitário " />
+				<p:inputNumber id="valorUnitario" value="#{cadastrarBebida.bebida.valorUnitario}" required="true"  />
+
+				<p:outputLabel for="lote" value="Lote " />
+				<p:inputNumber id="lote" value="#{cadastrarBebida.bebida.lote}"  required="true"  />
+
+				<p:outputLabel for="qtdEstoque" value="Estoque " />
+				<p:inputNumber id="qtdEstoque"  value="#{cadastrarBebida.bebida.qtdEstoque}" required="true"  />
+			</h:panelGrid>
+		</p:panel>
+		<div class="ui-g">
+			<div class="ui-g-1">
+				<p:commandButton value="Salvar" id="save" action="#{cadastrarBebida.salvar}" update="panel" icon="pi pi-save" />
+			</div>
+			<div class="ui-g-2">
+				<p:commandButton action="#{cadastrarBebida.limparDados}" update="panel" value="Limpar Campos"  />
+			</div>
+		</div>
+
 	</h:form>
 
 </h:body>

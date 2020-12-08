@@ -39,8 +39,8 @@ public class BebidaService {
 		salvarBebida(new Bebida(getRandomId(), "Fanta Uva 350 ml", "Fanta", 4.50, 548745, 25 ));
 		salvarBebida(new Bebida(getRandomId(), "Skol Beats 269 ml", "Skol", 6.00, 225400, 70 ));
 		salvarBebida(new Bebida(getRandomId(), "Skol Beats Zodiac 269 ml", "Skol", 7.00, 541225, 70 ));
-		salvarBebida(new Bebida(getRandomId(), "Chá Matte Pêssego 1,5 L", "Matte", 5.5, 998742, 28 ));
-		salvarBebida(new Bebida(getRandomId(), "Água Mineral Indaiá 1L", "Indaiá", 2.5, 247155, 90 ));
+		salvarBebida(new Bebida(getRandomId(), "Chï¿½ Matte Pï¿½ssego 1,5 L", "Matte", 5.5, 998742, 28 ));
+		salvarBebida(new Bebida(getRandomId(), "ï¿½gua Mineral Indaiï¿½ 1L", "Indaiï¿½", 2.5, 247155, 90 ));
 		
 	
 	}
